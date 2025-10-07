@@ -7,3 +7,5 @@ It will help in the issue of air pollution by a few features
 * Some advices about how to keep our air clean
 * check realtime weather condition with APIs in your current city
 * Chatting with other users in your area to make a team and help fixing the issue
+# How to run
+execute the app.py file
