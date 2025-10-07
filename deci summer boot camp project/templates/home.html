@@ -1,0 +1,84 @@
+{%extends "layout.html"%}
+{% block content %}
+
+        <section id="info">
+            <div class="container">
+                <h2>تلوث الهواء أهميته وخطورته</h2>
+                <p>
+                    تلوث الهواء بقى مشكلة كبيرة في حياتنا اليومية، وبيأثر على صحتنا
+                    والبيئة اللي حوالينا. لما نستنشق هواء ملوث، الجسيمات الصغيرة اللي
+                    فيه بتدخل رئتينا وتسبب مشاكل صحية زي الربو وأمراض القلب. وكمان،
+                    الناس اللي عندهم مشاكل صحية مسبقة زي الضغط والسكر بيواجهوا صعوبات
+                    أكبر. لكن تأثير التلوث مش بيقف عند الصحة بس، كمان بيضر البيئة.
+                    الأمطار الحمضية اللي بتسببها الملوثات بتخلي التربة والمياه تتلوث،
+                    وده بيؤثر على النباتات والحيوانات. غير كده، الملوثات زي ثاني أكسيد
+                    الكربون بتساهم في رفع حرارة الأرض وتغير المناخ. علشان نواجه المشكلة
+                    دي، لازم نشتغل على تقليل التلوث. ممكن نبدأ باستخدام وسائل نقل أنظف،
+                    وزيادة الوعي لحماية البيئة. كل واحد فينا يقدر يساهم، وده مهم علشان
+                    صحتنا ومستقبلنا.
+                </p>
+                <div class="photos">
+                    <img
+                        src="../static/airPollution1.jpg"
+                        alt="photo for air pollution"
+                        loading="lazy"
+                    />
+                    <img
+                        src="../static/airPollution2.jpg"
+                        alt="photo for air pollution"
+                        loading="lazy"
+                    />
+                    <img
+                        src="../static/airPollution3.jpg"
+                        alt="photo for air pollution"
+                        loading="lazy"
+                    />
+                </div>
+                <div id="stats">
+                    <h3>إحصائيات تلوث الهواء</h3>
+                    <!-- إحصائيات تلوث الهواء ستضاف هنا بواسطة JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="tasks">
+            <div class="container">
+                <h2>توصيات لتقليل تلوث الهواء</h2>
+                <ul>
+                    <li>ازرع شجرة<button onclick="updatePoints(10)">تم</button></li>
+                    <li>
+                        استخدم وسائل النقل العامة<button onclick="updatePoints(5)">
+                            تم
+                        </button>
+                    </li>
+                    <li>
+                        قلل استخدام البلاستيك
+                        <button onclick="updatePoints(8)">تم</button>
+                    </li>
+                </ul>
+                <p>نقاطك: <span id="points">0</span></p>
+                <p>يمكنك استرداد نقاطك بجوائز. <a href="#">استرداد</a></p>
+            </div>
+        </section>
+
+        <section id="donate">
+            <div class="container">
+                <h2>تبرع للمساهمة في تقليل تلوث الهواء</h2>
+                <form id="donation-form">
+                    <label for="amount">المبلغ (بالجنيه المصري):</label>
+                    <input type="number" id="amount" name="amount" min="1" required />
+                    <button type="submit">تبرع الآن</button>
+                </form>
+                <div id="donation-confirmation" style="display:none;">
+                    <p>شكراً لتبرعك! سيتم استخدام المبلغ لدعم الجهود المبذولة لتقليل تلوث الهواء.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="users">
+            <div class="container">
+                <h2>عدد المستخدمين المهتمين بهذة المشكلة في منطقتك</h2>
+                <p>عدد المستخدمين: {{num_rec}}</p>
+            </div>
+        </section>
+{% endblock %}

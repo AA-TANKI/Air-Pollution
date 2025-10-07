@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    .main-chat {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .first {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-bottom: 1px solid #ccc;
+    }
+    .arrow {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .user {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .name {
+        padding: 10px;
+        text-align: center;
+        background-color: #fafafa;
+        border-bottom: 1px solid #ccc;
+    }
+    .username {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+    }
+    .mainmsg {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        background-color: #fff;
+    }
+    .msg {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        background-color: #f9f9f9;
+    }
+    .form-control {
+        flex: 1;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .send {
+        width: 24px;
+        height: 24px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .chatleft {
+        text-align: left;
+        margin: 10px;
+        padding: 10px;
+        background-color: #51ff00;
+        border-radius: 10px;
+        align-self: flex-start;
+    }
+    .chatright {
+        text-align: right;
+        margin: 10px;
+        padding: 10px;
+        background-color: #498f07;
+        border-radius: 10px;
+        align-self: flex-end;
+    }
+    .infol, .infor {
+        font-size: 12px;
+        color: #777;
+        margin: 5px 10px;
+    }
+</style>
+<div class="main-chat">
+    <div class="first">
+        <form action="/users">
+            <input type="image" src="/static/arrow.png" class="arrow">
+        </form>
+        <img src="/static/user.png" class="user">
+    </div>
+    <div class="name">
+        <h3 class="username" name="name" id="name">{{ name }}</h3>
+    </div>
+    <div class="mainmsg" id="chat">
+    </div>
+    <form id="messageForm">
+        <div class="msg">
+            <input name="message" id="input" autocomplete="off" class="form-control mx-auto" placeholder="Enter your message">
+            <input type="image" src="/static/send.png" class="send" id="send">
+        </div>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+{% endblock %}

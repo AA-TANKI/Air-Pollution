@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة انشاء حساب</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+<body dir="rtl">
+    <div class="login-container">
+        <h1>انشاء حساب</h1>
+        <div id="error-message">
+            {% if error_message %}
+                <p>{{ error_message }}</p>
+            {% endif %}
+        </div>
+        <form action="{{ url_for('sign_up') }}" method="post">
+            <div class="input-group">
+                <label for="username">الاسم</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="age">العمر</label>
+                <input type="number" id="age" name="age" min="1" max="120" required>
+            </div>
+            <div class="input-group">
+                <label for="phoneNumber">رقم الهاتف</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <form>
+                <div class="input-group">
+                <label for="governorate">المحافظة:</label>
+                <select id="governorate" name="governorate">
+                    <option value="1">القاهرة</option>
+                    <option value="2">الجيزة</option>
+                    <option value="3">الإسكندرية</option>
+                    <option value="4">القليوبية</option>
+                    <option value="5">المنوفية</option>
+                    <option value="6">البحيرة</option>
+                    <option value="7">الغربية</option>
+                    <option value="8">كفر الشيخ</option>
+                    <option value="9">الدقهلية</option>
+                    <option value="10">الشرقية</option>
+                    <option value="11">دمياط</option>
+                    <option value="12">بور سعيد</option>
+                    <option value="13">الإسماعيلية</option>
+                    <option value="14">السويس</option>
+                    <option value="15">شمال سيناء</option>
+                    <option value="16">جنوب سيناء</option>
+                    <option value="17">البحر الأحمر</option>
+                    <option value="18">الفيوم</option>
+                    <option value="19">بني سويف</option>
+                    <option value="20">المنيا</option>
+                    <option value="21">أسيوط</option>
+                    <option value="22">سوهاج</option>
+                    <option value="23">قنا</option>
+                    <option value="24">الأقصر</option>
+                    <option value="25">أسوان</option>
+                    <option value="26">مطروح</option>
+                    <option value="27">الوادي الجديد</option>
+                </select>
+            </div>
+            <button type="submit">انشاء</button>
+            <p> لديك حساب؟ <a href="/login">تسجيل الدخول </a></p>
+        </form>
+    </div>
+    <script src="../static/main.js"></script>
+</body>
+</html>
