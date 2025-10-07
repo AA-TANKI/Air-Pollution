@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مكافحة تلوث الهواء</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&display=swap"
+        rel="stylesheet"
+    />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="/login">مكافحة تلوث الهواء</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="/air_quality">معلومات</a></li>
+                    <li><a href="#tasks">التوصيات</a></li>
+                    <li><a href="#donate">تبرع</a></li>
+                    <li><a href="/users">المستخدمون</a></li>
+                    <li>الحساب الحالي:{{user}}</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 مكافحة تلوث الهواء. كل الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>

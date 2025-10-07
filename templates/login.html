@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة تسجيل الدخول</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+<body dir="rtl">
+    <div class="login-container">
+        <h1>تسجيل الدخول</h1>
+        <div id="error-message">
+            {% if error_message %}
+                <p>{{ error_message }}</p>
+            {% endif %}
+        </div>
+        <form action="{{ url_for('login') }}" method="post">
+            <div class="input-group">
+                <label for="username">الاسم</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+            <button type="submit">تسجيل الدخول</button>
+            <p>ليس لديك حساب؟ <a href="/signup">تسجيل حساب </a></p>
+        </form>   
+    </div>
+    <script src="../static/main.js"></script>
+</body>
+</html>
